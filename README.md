@@ -16,19 +16,19 @@
 ```
 vagrant@vagrant:~/netology-13-kubernetes-config-01-objects$ kubectl -n stage get po
 NAME                      READY   STATUS    RESTARTS   AGE
-db-0                      1/1     Running   0          17m
-fb-app-77d9c5cb44-x7pmn   2/2     Running   0          19m
+db-0                      1/1     Running   0          5h23m
+fb-app-77d9c5cb44-x7pmn   2/2     Running   0          5h25m
 vagrant@vagrant:~/netology-13-kubernetes-config-01-objects$ kubectl -n stage get deployments
 NAME     READY   UP-TO-DATE   AVAILABLE   AGE
-fb-app   1/1     1            1           20m
+fb-app   1/1     1            1           5h25m
 vagrant@vagrant:~/netology-13-kubernetes-config-01-objects$ kubectl -n stage get statefulset
 NAME   READY   AGE
-db     1/1     18m
+db     1/1     5h23m
 vagrant@vagrant:~/netology-13-kubernetes-config-01-objects$ kubectl -n stage get services
 NAME       TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
-backend    ClusterIP   10.233.29.234   <none>        9000/TCP   20m
-db         ClusterIP   10.233.30.191   <none>        5432/TCP   18m
-frontend   ClusterIP   10.233.39.149   <none>        8000/TCP   20m
+backend    ClusterIP   10.233.29.234   <none>        9000/TCP   5h25m
+db         ClusterIP   10.233.30.191   <none>        5432/TCP   5h23m
+frontend   ClusterIP   10.233.39.149   <none>        80/TCP   5h25m
 vagrant@vagrant:~/netology-13-kubernetes-config-01-objects$
 ```
 
