@@ -1,0 +1,47 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  labels:
+    app: db
+  name: db
+  namespace: stage
+spec:
+  selector:
+    matchLabels:
+      app: db
+  serviceName: db
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+          containers:
+            - name: db
+              image: postgres:latest
+              ports:
+                - containerPort: 5432
+              env:
+                - name: POSTGRES_USER
+                  value: postgres
+                - name: POSTGRES_PASSWORD
+                  value: postgres
+                - name: POSTGRES_DB
+                  value: news
+                - name: PGDATA
+                  value: /data
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: db
+  namespace: stage
+spec:
+  ports:
+    - name: db
+      port: 5432
+      targetPort: 5432
+  selector:
+    app: db
+  type: ClusterIP
