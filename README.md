@@ -41,7 +41,7 @@ vagrant@vagrant:~/netology-13-kubernetes-config-01-objects$
 
 ### Ответ:
 * те же образы фронта и бэка из docker hub
-* создал namespase для зкщв
+* создал namespase для prod
 * ссылка на [frontend.yaml](prod/frontend.yaml)
 * ссылка на [backend.yaml](prod/backend.yaml)
 * ссылка на [db.yaml](prod/db.yaml)
